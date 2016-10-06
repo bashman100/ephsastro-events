@@ -1,0 +1,25 @@
+<!doctype html>{% load staticfiles %}
+<head>
+  <title>Eventio</title>
+
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+<head>
+<body>
+  <div class="container">
+    <h1>Eventio</h1>
+    <h2>Events List</h2>
+
+    {% for event in events %}
+      <div>
+        <h3>{{ event.name }}</h3>
+        <p>{{ event.description }}</p>
+        <dl>
+          <dt>When:</dt>
+          <dd>{{ event.start_time }}</dd>
+        </dl>
+      </div>
+      <p style='margin-bottom: 1px; border-bottom: 1px solid #999;'></p>
+    {% endfor %}
+
+  </div>
+</body>
